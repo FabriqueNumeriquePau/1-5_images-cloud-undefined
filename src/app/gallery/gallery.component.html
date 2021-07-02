@@ -1,0 +1,12 @@
+<!-- <mat-toolbar color="primary">
+    <span>My Application</span>
+  </mat-toolbar> -->
+<ng-container *ngIf="photos$ | async as photos;else loadingTemplate">
+    <section class="flex photos_list" appDad (fileDropped)="fileDropped($event)">
+        <app-photo *ngFor="let photo of photos;trackBy: trackFn" [photo]="photo">
+        </app-photo>
+    </section>
+</ng-container>
+<ng-template #loadingTemplate>
+    <app-spinner color="warn" diameter="60"></app-spinner>
+</ng-template>

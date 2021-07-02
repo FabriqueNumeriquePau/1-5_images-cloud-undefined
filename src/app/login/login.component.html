@@ -1,0 +1,15 @@
+<section class="centered login">
+    <form class="flex login-block" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-form-field appearance="legacy">
+            <mat-label>Username: </mat-label>
+            <input matInput placeholder="username" formControlName="username">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" formControlName="password">
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+        <button mat-raised-button [disabled]="loginForm.invalid" color="primary">Login</button>
+    </form>
+</section>
